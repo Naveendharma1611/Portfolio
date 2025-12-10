@@ -1,60 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naveenkumar Dharmalingam</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Naveenkumar — Data & ML Portfolio</title>
+  <meta name="description" content="Naveenkumar — Python | SQL | Machine Learning | Data Science" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page">
 
-    <div class="container">
-
-        <div class="profile">
-            <img src="assets/profile.jpg" class="avatar" alt="Profile Image">
-            <h1>Naveenkumar</h1>
-            <h3>Data Engineer</h3>
+    <!-- Header card -->
+    <header class="header-card">
+      <div class="header-left">
+        <img class="avatar" src="./photo.JPG" alt="Naveenkumar photo" onerror="this.src='https://via.placeholder.com/120'">
+        <div class="title">
+          <div class="name">Naveenkumar Dharmalingam</div>
+          <div class="role">Data & Machine Learning • Python · SQL · AWS</div>
         </div>
+      </div>
 
-        <div class="links">
-            <a class="button" href="resume.pdf">📄 Resume</a>
-            <a class="button" href="https://www.linkedin.com/in/naveenkumar-dharmalingam-48109b250/">💼 LinkedIn</a>
-            <a class="button" href="https://github.com">👨‍💻 GitHub</a>
-            <a class="button" href="#projects">📸 Projects</a>
+      <div class="header-right">       <a class="btn resume" href="./resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+      </div>
+    </header>
+
+    <!-- Quick Links (as large cards) -->
+    <main class="container">
+      <section class="card links-section" aria-labelledby="quick-links">
+        <h2 id="quick-links">Quick Links</h2>
+        <p class="muted">Click a card to open the link. Use the ⋮ menu to share or copy.</p>
+
+        <div class="links-grid">
+          <div class="big-card link-row" data-id="resume">
+            <div class="card-left">
+              <div class="card-icon">📄</div>
+              <div>
+                <div class="card-title">Resume</div>
+                <div class="card-sub muted">Download or open my CV</div>
+              </div>
+            </div>
+            <div class="card-right">
+              <a href="./resume.pdf" class="card-open" target="_blank" rel="noopener">Open</a>
+              <button class="card-menu" aria-label="Open menu">⋮</button>
+            </div>
+          </div>
+
+          <div class="big-card link-row" data-id="linkedin">
+            <div class="card-left">
+              <div class="card-icon">💼</div>
+              <div>
+                <div class="card-title">LinkedIn</div>
+                <div class="card-sub muted">Connect with me</div>
+              </div>
+            </div>
+            <div class="card-right">
+              <a href="https://www.linkedin.com/in/naveenkumar-dharmalingam-48109b250/" class="card-open" target="_blank" rel="noopener">Open</a>
+              <button class="card-menu" aria-label="Open menu">⋮</button>
+            </div>
+          </div>
+
+          <div class="big-card link-row" data-id="github">
+            <div class="card-left">
+              <div class="card-icon">👨‍💻</div>
+              <div>
+                <div class="card-title">GitHub</div>
+                <div class="card-sub muted">View code & projects</div>
+              </div>
+            </div>
+            <div class="card-right">
+              <a href="https://github.com/Naveendharma1611" class="card-open" target="_blank" rel="noopener">Open</a>
+              <button class="card-menu" aria-label="Open menu">⋮</button>
+            </div>
+          </div>
+
+          <div class="big-card link-row" data-id="projects">
+            <div class="card-left">
+              <div class="card-icon">📸</div>
+              <div>
+                <div class="card-title">Projects</div>
+                <div class="card-sub muted">Detailed project page</div>
+              </div>
+            </div>
+            <div class="card-right">
+              <a href="./projects.html" class="card-open" rel="noopener">Open</a>
+              <button class="card-menu" aria-label="Open menu">⋮</button>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                Hi! I am a Data Engineer skilled in Python, SQL, ETL pipelines, and cloud technologies.
-                I love building automation tools, dashboards, and data-driven solutions.
-            </p>
-        </section>
+      <!-- About -->
+      <section class="card about">
+        <h3>About</h3>
+        <p class="muted">Passionate graduate with a solid foundation in Python and SQL. Experienced in data manipulation (NumPy, Pandas), visualization (Matplotlib), and building ML pipelines. I enjoy solving real problems with data and shipping clear insights.</p>
+      </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
+      <!-- Contact row at bottom -->
+      <section class="card contact">
+        <h3>Contact</h3>
+        <p class="muted">Prefer direct contact? Use any of these:</p>
+        <div class="contact-pills">
+          <a class="pill wa" href="https://wa.me/919360830290?text=Hi%20Naveen,%20I%20saw%20your%20portfolio" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="pill call" href="tel:+919360830290">Call</a>
+          <a class="pill text" href="sms:919360830290?body=Hi%20Naveen,%20I%20saw%20your%20portfolio">Text</a>
+          <a class="pill email" href="mailto:naveendharma1611@gmail.com">Email</a>
+        </div>
+      </section>
 
-            <div class="project-card">
-                <h3>Job Scraper + Email Alert System</h3>
-                <p>Python | BeautifulSoup | SMTP | Automation</p>
-            </div>
+      <footer class="footer muted">© <span id="year"></span> Naveenkumar — built with ♥</footer>
+    </main>
+  </div>
 
-            <div class="project-card">
-                <h3>Data Engineering Pipeline on AWS</h3>
-                <p>AWS S3 → Glue → Lambda → Redshift</p>
-            </div>
+  <script>
+  // copy/share menu (reusable)
+  const rows = document.querySelectorAll('.link-row');
 
-            <div class="project-card">
-                <h3>Resume Classification Using NLP</h3>
-                <p>Python | NLP | ML Classification</p>
-            </div>
-        </section>
+  function showMenu(button, url) {
+    // remove existing
+    document.querySelectorAll('.menu').forEach(n=>n.remove());
 
-        <footer>
-            <p>📩 Contact: naveendharma1611@gmail.com</p>
-        </footer>
+    const rect = button.getBoundingClientRect();
+    const menu = document.createElement('div');
+    menu.className = 'menu';
+    menu.style.top = (rect.bottom + window.scrollY + 8) + 'px';
+    menu.style.left = (Math.max(12, rect.left + window.scrollX - 120)) + 'px';
 
-    </div>
-    
+    const shareBtn = document.createElement('button');
+    shareBtn.textContent = 'Share';
+    shareBtn.addEventListener('click', async () => {
+      const shareData = { title: 'Naveenkumar — Link', text: 'Check this link', url };
+      if (navigator.share) {
+        try { await navigator.share(shareData); } catch(_) {}
+      } else {
+        try { await navigator.clipboard.writeText(url); toast('Link copied'); } catch { toast('Copy failed'); }
+      }
+      menu.remove();
+    });
+
+    const copyBtn = document.createElement('button');
+    copyBtn.textContent = 'Copy link';
+    copyBtn.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(url); toast('Copied ✅'); } catch { toast('Copy failed'); }
+      menu.remove();
+    });
+
+    menu.appendChild(shareBtn);
+    menu.appendChild(copyBtn);
+    document.body.appendChild(menu);
+
+    setTimeout(()=> {
+      const hide = (e) => {
+        if (!menu.contains(e.target) && e.target !== button) { menu.remove(); document.removeEventListener('click', hide); }
+      };
+      document.addEventListener('click', hide);
+    },0);
+  }
+
+  // small toast
+  function toast(text) {
+    let t = document.querySelector('.toast');
+    if (!t) {
+      t = document.createElement('div');
+      t.className = 'toast';
+      document.body.appendChild(t);
+    }
+    t.textContent = text;
+    t.classList.add('show');
+    setTimeout(()=> t.classList.remove('show'),1600);
+  }
+
+  rows.forEach(row => {
+    const id = row.dataset.id;
+    const menuBtn = row.querySelector('.card-menu');
+    let url;
+    if (id === 'resume') url = new URL('./resume.pdf', window.location.href).href;
+    else if (id === 'linkedin') url = 'https://www.linkedin.com/in/naveenkumar-dharmalingam-48109b250/';
+    else if (id === 'github') url = 'https://github.com/Naveendharma1611';
+    else if (id === 'projects') url = new URL('./projects.html', window.location.href).href;
+    else url = window.location.href;
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showMenu(menuBtn, url);
+    });
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

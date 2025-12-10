@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Naveenkumar</title>
+  <meta name="description" content="Projects by Naveenkumar" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="projects-hero">
+      <div class="hero-left">
+        <img class="hero-avatar" src="./photo.JPG" alt="Naveenkumar photo" onerror="this.src='https://via.placeholder.com/160'">
+        <div>
+          <h1>Naveenkumar Dharmalingam</h1>
+          <p class="role">Data & Machine Learning • Python · SQL · AWS</p>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn-back" href="./index.html" title="Back to profile">← Back to profile</a>
+        <a class="btn-primary" href="./resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="projects-section">
+        <div class="section-head">
+          <h2>Selected Projects</h2>
+          <p class="muted">Click any card to read a short summary, tech used, and demo / code links.</p>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Project cards (data attributes used to populate modal) -->
+          <article class="project-card" tabindex="0"
+                   data-title="Job Scraper + Email Alerts"
+                   data-desc="Automates job discovery by scraping multiple boards, filters by keywords and emails curated alerts to subscribers. Built with Python, BeautifulSoup, and SMTP scheduling."
+                   data-tech="Python · BeautifulSoup · SMTP · Scheduler"
+                   data-github="https://github.com/Naveendharma1611/job-scraper"
+                   data-demo="">
+            <div class="card-thumb">📄</div>
+            <h3>Job Scraper + Email Alerts</h3>
+            <p class="card-sub">Python · BeautifulSoup · Scheduler</p>
+          </article>
+
+          <article class="project-card" tabindex="0"
+                   data-title="Data Pipeline on AWS"
+                   data-desc="End-to-end serverless ETL: S3 ingestion → AWS Glue transform → Lambda orchestration → Redshift analytics. Focus on reliability and cost-efficiency."
+                   data-tech="AWS S3 · Glue · Lambda · Redshift"
+                   data-github="https://github.com/Naveendharma1611/aws-data-pipeline"
+                   data-demo="">
+            <div class="card-thumb">☁️</div>
+            <h3>Data Pipeline on AWS</h3>
+            <p class="card-sub">S3 → Glue → Lambda → Redshift</p>
+          </article>
+
+          <article class="project-card" tabindex="0"
+                   data-title="Resume Classification (NLP)"
+                   data-desc="Resume parsing + classification using feature-engineering and classical ML models to prioritise candidates. Includes preprocessing, embedding and model evaluation reports."
+                   data-tech="Python · NLP · scikit-learn"
+                   data-github="https://github.com/Naveendharma1611/resume-classifier"
+                   data-demo="">
+            <div class="card-thumb">🤖</div>
+            <h3>Resume Classification (NLP)</h3>
+            <p class="card-sub">NLP · Classification pipeline</p>
+          </article>
+
+          <!-- Add more project-card blocks as needed -->
+        </div>
+      </section>
+
+      <section class="contact-card">
+        <h3>Contact</h3>
+        <p class="muted">Prefer direct contact? Use any of these:</p>
+        <div class="contact-grid">
+          <a class="contact-item wa" href="https://wa.me/919360830290?text=Hi%20Naveen,%20I%20saw%20your%20projects" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="contact-item call" href="tel:+919360830290">📞 Call</a>
+          <a class="contact-item sms" href="sms:919360830290?body=Hi%20Naveen,%20I%20saw%20your%20projects">📱 Text</a>
+          <a class="contact-item email" href="mailto:naveendharma1611@gmail.com">✉️ Email</a>
+        </div>
+      </section>
+
+      <footer class="footer muted">© <span id="year"></span> Naveenkumar — built with ♥</footer>
+    </main>
+  </div>
+
+  <!-- Modal (hidden until a project card is clicked) -->
+  <div id="projectModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Close">✕</button>
+      <h3 id="modalTitle">Project Title</h3>
+      <p id="modalTech" class="muted">Tech stack</p>
+      <p id="modalDesc">Description</p>
+      <div class="modal-actions">
+        <a id="modalDemo" class="btn-outline" href="#" target="_blank" rel="noopener">Live Demo</a>
+        <a id="modalCode" class="btn-primary" href="#" target="_blank" rel="noopener">View Code</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // Populate year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Modal logic
+  const modal = document.getElementById('projectModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDesc = document.getElementById('modalDesc');
+  const modalTech = document.getElementById('modalTech');
+  const modalDemo = document.getElementById('modalDemo');
+  const modalCode = document.getElementById('modalCode');
+  const modalClose = document.querySelector('.modal-close');
+
+  function openModal(data) {
+    modalTitle.textContent = data.title;
+    modalDesc.textContent = data.desc;
+    modalTech.textContent = data.tech;
+    modalDemo.href = data.demo || '#';
+    modalCode.href = data.github || '#';
+    modalDemo.style.display = data.demo ? 'inline-block' : 'none';
+    modalCode.style.display = data.github ? 'inline-block' : 'none';
+    modal.setAttribute('aria-hidden', 'false');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  // Attach click handlers to project cards
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const data = {
+        title: card.dataset.title,
+        desc: card.dataset.desc,
+        tech: card.dataset.tech,
+        github: card.dataset.github,
+        demo: card.dataset.demo
+      };
+      openModal(data);
+    });
+    // accessibility: open on Enter key
+    card.addEventListener('keydown', (e) => { if (e.key === 'Enter') card.click(); });
+  });
+  </script>
+</body>
+</html>
